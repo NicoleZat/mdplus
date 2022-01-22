@@ -19,12 +19,19 @@ if __name__ == '__main__':
     #get rid of the neonates
     dataset2016 = dataset2016.dropna()
 
-    #dataset2017 = pd.read_csv(config.DATAFILE2017)
-    #dataset2018 = pd.read_csv(config.DATAFILE2018)
-    #dataset2019 = pd.read_csv(config.DATAFILE2019)
+    dataset2017 = pd.read_csv(config.DATAFILE2017)
+    dataset2017 = dataset2017[selectedColumns]
+    dataset2017 = dataset2017.dropna()
 
-    bigdata = dataset2016
-    #bigdata = pd.concat([dataset2016, dataset2017, dataset2018, dataset2019], ignore_index=True, sort=False)
+    dataset2018 = pd.read_csv(config.DATAFILE2018)
+    dataset2018 = dataset2018[selectedColumns]
+    dataset2018 = dataset2018.dropna()
+
+    dataset2019 = pd.read_csv(config.DATAFILE2019)
+    dataset2019 = dataset2019[selectedColumns]
+    dataset2019 = dataset2019.dropna()
+
+    bigdata = pd.concat([dataset2016, dataset2017, dataset2018, dataset2019], ignore_index=True, sort=False)
 
     #set up
     length = len(bigdata.columns) - 1
