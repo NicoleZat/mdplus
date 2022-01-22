@@ -60,9 +60,9 @@ if __name__ == '__main__':
 
     #Random forest
     randomForestParameters = [{'estimators': [1000], 'criterion': ['entropy']}]
-    #classifier, bestParams, GSresults = classifiers.randomForest(X_train, y_train, randomForestParameters, config.CV_SCORING)
+    #classifier, bestParams, GSresults = classifiers.randomForest2(X_train, y_train, randomForestParameters, config.CV_SCORING)
     classifier = classifiers.randomForest(X_train, y_train, randomForestParameters,
                                                                  config.CV_SCORING)
-    #results.getResults(classifier, X_train, y_train, './results/randomForest', bestParams, 'TRAIN', 0, GSresults)
-    results.getResults(classifier, X_test, y_test, './results/randomForest')
-    #results.getResults(classifier, X_test, y_test, './results/randomForest', bestParams, 'TEST', 0, GSresults)
+    #results.getResults(classifier, X_train, y_train, './results/randomForest2', bestParams, 'TRAIN', 0, GSresults)
+    results.getResults(classifier, X_test, y_test, 'results/randomForest2')
+    #results.getResults(classifier, X_test, y_test, './results/randomForest2', bestParams, 'TEST', 0, GSresults)
