@@ -1,0 +1,18 @@
+
+Accuracy: 0.9806329563745062
+              precision    recall  f1-score   support
+
+         0.0       0.98      1.00      0.99    561938
+         1.0       0.75      0.12      0.21     12130
+
+    accuracy                           0.98    574068
+   macro avg       0.87      0.56      0.60    574068
+weighted avg       0.98      0.98      0.97    574068
+
+Confusion matrix results: 
+TP: 1510 FP: 498
+TN: 561440 FN: 10620
+Sensitivity: 0.12448474855729597 Specificity: 0.9991137812356523
+ROC AUC: 0.5617992648964741
+PPV: 0.75199203187251 NPV: 0.9814355137572982
+F1 score: 0.21360871410383364
