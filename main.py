@@ -10,13 +10,13 @@ from sklearn.linear_model import LogisticRegression
 if __name__ == '__main__':
 
     #key_nis = NIS record number
+    #using these columns
     selectedColumns = ['age', 'amonth', 'aweekend', 'elective', 'female', 'hcup_ed', 'hosp_division',
                        'hosp_nis', 'i10_ndx', 'i10_npr', 'los', 'mdc', 'mdc_nopoa', 'nis_stratum', 'pay1', 'pl_nchs',
                        'race', 'totchg', 'tran_in', 'zipinc_qrtl', 'died']
 
     dataset2016 = pd.read_csv(config.DATAFILE2016)
     dataset2016 = dataset2016[selectedColumns]
-    #get rid of the neonates
     dataset2016 = dataset2016.dropna()
 
     dataset2017 = pd.read_csv(config.DATAFILE2017)
@@ -32,6 +32,10 @@ if __name__ == '__main__':
     dataset2019 = dataset2019.dropna()
 
     bigdata = pd.concat([dataset2016, dataset2017, dataset2018, dataset2019], ignore_index=True, sort=False)
+    bigdata.age = bigdata.age.astype(int)
+    bigdata.totchg = bigdata.totchg.astype(int)
+    bigdata.tran_in = bigdata.tran_in.astype(int)
+    bigdata.zipinc_qrtl = bigdata.zipinc_qrtl.astype(int)
 
     #set up
     length = len(bigdata.columns) - 1
